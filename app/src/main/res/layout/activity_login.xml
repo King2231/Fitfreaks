@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.789">
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/confPasswordR"
             android:layout_width="246dp"
             android:layout_height="58dp"
             android:layout_marginBottom="8dp"
@@ -43,11 +43,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText4"
+            app:layout_constraintTop_toBottomOf="@+id/passwordR"
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/passwordR"
             android:layout_width="246dp"
             android:layout_height="58dp"
             android:layout_marginBottom="8dp"
@@ -67,11 +67,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtMail"
+            app:layout_constraintTop_toBottomOf="@+id/emailR"
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/txtMail"
+            android:id="@+id/emailR"
             android:layout_width="246dp"
             android:layout_height="58dp"
             android:layout_marginBottom="8dp"
@@ -111,11 +111,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_signup2"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login"
             app:layout_constraintVertical_bias="0.068" />
 
         <Button
-            android:id="@+id/btn_signup2"
+            android:id="@+id/btn_login"
             android:layout_width="141dp"
             android:layout_height="52dp"
             android:layout_marginBottom="124dp"
@@ -134,7 +134,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/confPasswordR" />
     </android.support.constraint.ConstraintLayout>
 
     <ImageView
