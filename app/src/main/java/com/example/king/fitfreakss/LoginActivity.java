@@ -14,7 +14,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthEmailException;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -75,9 +77,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             FirebaseUser user = mAuth.getCurrentUser();
                         } else {
                             // If sign in fails, display a message to the user.
-                            String s = "Sign up Failed" + task.getException();
-                            Toast.makeText(getApplicationContext(), s,Toast.LENGTH_SHORT).show();
-                            Log.e("unsuccessful", s);
+                            try
+                            {
+                                throw task.getException();
+                            }
+                            catch(Exception e)
+                            {
+                                Toast.makeText(getApplicationContext(), e.getMessage(),Toast.LENGTH_SHORT).show();
+                            }
+
                         }
 
                         // ...
