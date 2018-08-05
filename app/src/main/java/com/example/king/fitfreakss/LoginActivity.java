@@ -1,28 +1,29 @@
 package com.example.king.fitfreakss;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthEmailException;
-import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText Email, Password;
     Button signup, login;
+    ImageView img_logo2;
     private FirebaseAuth mAuth;
 
     @Override
@@ -39,9 +40,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-
-        Email = findViewById(R.id.emailR);
-        Password = findViewById(R.id.passwordR);
+        img_logo2=(ImageView)findViewById(R.id.img_logo);
+        Email = findViewById(R.id.txtMail);
+        Password = findViewById(R.id.txtpwd);
         signup = findViewById(R.id.btn_signup);
         login = findViewById(R.id.btn_login);
 
@@ -95,6 +96,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void logIn(){
         //Redirect to login page
+        Pair[] pairs=new Pair[3];
+        pairs[0]=new Pair<View,String>(img_logo2,"abc");
+        pairs[1]=new Pair<View,String>(login,"xyz");
+        pairs[2]=new Pair<View,String>(signup,"pqr");
+
+        Intent intent=new Intent(LoginActivity.this,SigninActivity.class);
+        ActivityOptions opts=ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, pairs);
+        startActivity(intent,opts.toBundle());
     }
 
     @Override
